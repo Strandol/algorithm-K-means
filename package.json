@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "k-means": "node ./src/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dvalian",
   "license": "ISC",
   "dependencies": {
+    "console.table": "^0.10.0",
     "lodash": "^4.17.5",
     "lodash-math": "0.0.7"
   }
