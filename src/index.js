@@ -15,19 +15,20 @@ let {
   getCloserCenter
 } = require("./utils");
 
-const MAX_DEPTH = 1000;
-const EXAM_PATH = "./src/docs/exam.txt";
-const TEACH_PATH = "./src/docs/teach.txt";
+const CLUSTERS_COUNT = 3;
+const MAX_DEPTH = 1500;
+const EXAM_PATH = "./src/lab1/src/exam.txt";
+const TEACH_PATH = "./src/lab1/src/teach.txt";
 
 let content = fs
   .readFileSync(EXAM_PATH)
   .toString()
-  .split("\r\n");
+  .split("\n");
 
 let teach = fs
   .readFileSync(TEACH_PATH)
   .toString()
-  .split("\r\n");
+  .split("\n");
 
 let count = content.length;
 
@@ -99,7 +100,7 @@ function showSpecificCluster(symbols, clusterNum) {
   console.table(symbolsToTable([symbol]));
 }
 
-_.forEach(new Array(4), () => {
+_.forEach(new Array(CLUSTERS_COUNT), () => {
   let randomI = getRandomNum(content.length);
 
   while (_.find(centers, { position: randomI })) {
